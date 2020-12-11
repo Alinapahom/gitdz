@@ -1,0 +1,76 @@
+// Place all the styles related to the News controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.post_con { // расстояние от меню
+  margin: 0px 50px;
+  width: fit-content;
+
+}
+.post_con form h1{ //
+    background-color:#d3778e;
+  color: white;
+  width: 380px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+
+#textarea{ //рамка 'написать сообщение'
+    height: 100px;
+    width: 500px;
+    max-width: 400px; 
+  border-bottom: white solid 3px;
+    padding: 12px 20px;
+  display: flex;
+  border: 1px solid   #803d4e;
+  border-radius: 4px;
+  box-sizing: border-box;
+   
+}
+.post_con form input{ // кнопка отправить пост
+     border-bottom: white solid 3px;
+    padding: 6px 10px;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 8px;
+  box-sizing: border-box;
+    display: inline;
+    color: white;
+    background-color: #d3778e;
+    font-size: 20px;
+}
+
+#posts{ //
+max-width: 70%;
+}
+
+#posts tr{  // закругления
+  border-radius: 10px;
+
+}
+
+
+.post_content{ // форма где расположен текст
+  border-radius: 10px;
+  background-color: #d3778e;
+  color: white;
+  padding-left: 30px;
+  padding-right: 10px;
+  padding-bottom: -50px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+  white-space: pre-line;
+}
+
+.post_content a{ // линия под именем и фамилией
+  color: white;
+  font-size: 20px;
+  border-bottom: #FFFFFF solid 2px;
+}
+
+.post_content div{ // размер формы где пост 
+  padding-top: 5px;
+ width: 500px;
+}

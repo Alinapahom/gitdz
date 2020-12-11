@@ -1,0 +1,89 @@
+// Place all the styles related to the Frinends controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.button_to > input{ // кнопка добавить друга
+  background-color: #d3778e;;
+  color: white;
+  width: 400px;
+  padding: 20px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  font-size: 20px;
+  border: none;
+}
+
+table#view_friends_id{ // таблица Мои друзья
+  background: #d3778e;;
+  margin-top: 10px;
+  width: 400px;
+  border-radius: 10px;
+  color: white;
+  padding: 0 20px;
+  padding-bottom: 20px;
+}
+
+// table#view_friends_id td  a {
+//   color: #ffffff;
+// }
+
+table#view_friends_id td  { // разделение друзей
+  border-bottom: white solid 3px;
+}
+
+.find_frinends{ // отступ от головы
+    margin-top: 10px;
+}
+
+.find_frinends input:first-child{ // форма для ввоода имя пользователя
+     border-bottom: white solid 3px;
+    width: 50%;
+    padding: 12px 20px;
+  margin-left: 10px;
+  display: flex;
+  border: 1px solid #803d4e;
+  border-radius: 4px;
+  box-sizing: border-box;
+     display: inline;
+    font-size: 20px;
+}
+
+.find_frinends input:last-child{ // кнопка найти друзей
+     border-bottom: white solid 3px;
+    width: 100px;
+    padding: 12px 20px;
+  margin: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+    display: inline;
+    color: white;
+    background-color: #d3778e;;
+    font-size: 20px;
+}
+
+#friends_table{ // таблица найденные друзья
+    
+    margin-left: 10px;
+    background: #d3778e;;
+  margin-top: 10px;
+  width: 50%;
+  border-radius: 10px;
+  color: white;
+  padding: 0 20px;
+  padding-bottom: 20px;
+}
+
+table#friends_table td  { // найденные друзья линия подчеркивания 
+  border-bottom: white solid 3px;
+ display: flex;
+}
+
+table#friends_table td form input { // кнопка добавить друга
+   border-bottom: white solid 3px;
+  margin: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+    color: #d3778e;;
+    background-color: #FFFFFF;
+}

@@ -1,0 +1,25 @@
+<div class="row">
+  <%= render 'layouts/r_menu' %>
+  <div class="column right">
+<div class = "post_con">
+          <%= form_tag '/post_add',  remote:true do %>
+        <h2>Что у вас нового? </h2>
+        <textarea id="textarea", placeholder="Написать сообщение!", name="post"></textarea>
+        <input name="commit" type="submit" value="Отправить" onclick="return send_query();"  />
+     <%end %>
+        <h2>Последние новости</h2>
+        <table id="posts">
+          <% @res_posts.each do |res| %>
+          <tr>
+            <td>
+              <div class="post_content">
+              <%= link_to res[0][0], "/?id_user=#{res[3][0]}"  %>
+                <div class="text_post"><%= res[1][0] %></div>
+              </div>
+            </td>
+          </tr>
+          <% end %>
+        </table>
+  </div>
+</div>
+</div>

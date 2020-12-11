@@ -1,0 +1,42 @@
+// Place all the styles related to the Session controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.login  h1{ //Вход
+  text-align: center;
+  color: #ffffff;
+}
+
+.login { //форма входа и регистрации
+  background-color: #d3778e;
+  border-radius: 10px;
+  padding: 20px 20px 15px 20px;
+  position: absolute;
+  margin-top: 350px;
+  left: 50%;
+  transform: translate(-50%);
+
+}
+.input_text_login { //логин и пароль 
+  width: 500px;
+  padding: 12px 20px;
+  margin: 20px 0;
+  display: flex;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.btn { // кнопка войти и регистрация 
+  width: 500px;
+  background-color: #803d4e;
+  color: white;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.notice{ // сообщение ,что пароль неправильный
+  text-align: center;
+}

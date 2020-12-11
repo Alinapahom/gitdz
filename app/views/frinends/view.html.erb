@@ -1,0 +1,18 @@
+<div class="row">
+  <%= render 'layouts/r_menu' %>
+  <div class="column right">
+    <div class="container_right">
+    <table id="view_friends_id">
+      <tr>
+        <th>Мои друзья</th>
+      </tr>
+      <% @res.each do |result| %>
+        <tr>
+          <td><%= link_to result[0].join, "/?id_user=#{result[1].join}" %></td>
+        </tr>
+      <% end %>
+    </table>
+      <%= button_to "Добавить друга", action: "add" %>
+  </div>
+  </div>
+</div>
