@@ -1,18 +1,18 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
+  skip_before_action :authorize, only: %i[new create]
+
   def new
-    redirect_to '/' if current_user
+    redirect_to root_url if current_user
   end
 
   def create
-    user = User.new(user_params)
-    if user.save # если такой пользователь существует
-      session[:user_id] = user.id
-      redirect_to '/'
-    else # отправляем на страницу входа
-      # redirect_to '/signup'
-    end
+    user = User.create(user_params)
+    return render :new unless user.valid?
+
+    session[:user_id] = user.id
+    redirect_to root_url
   end
 
   private

@@ -1,39 +1,27 @@
 # frozen_string_literal: true
 
 class FrinendsController < ApplicationController
-  before_action :authorize # если  user не залогинен редерим на страницу входа
   skip_before_action :verify_authenticity_token # отключаем защиту от подделки запросов на контроллере
 
   def view
-    user_id = User.find(session[:user_id]) if session[:user_id]
-    arr = Friend.select(:id_friend).where(id_user: user_id.id.to_i)
-    @res = [] # @res хранит массив друзей
-    arr.each do |x|
-      @res << [["#{User.find(x.id_friend.to_i).name} #{User.find(x.id_friend.to_i).surname}"],
-               [User.find(x.id_friend.to_i).id]]
-    end
+    @res = current_user.friends
   end
 
   def add
-    name = params[:name]
-
     respond_to do |format|
       format.html
       format.json do
-        render json: { man: User.select(:id, :name, :surname).where(name: name).where.not(id: session[:user_id]).where(
-          'users.id not in (SELECT id_friend FROM friends WHERE id_user = ?)', session[:user_id]
-        )
-                                .or(User.select(:id, :name, :surname).where(surname: name)) } # Выдаем JSON для AJAX запроса
+        # Выдаем JSON для AJAX запроса.
+        render json: { man: User.find_possible_friends_for(current_user, params[:name]) }
       end
     end
   end
 
   def add_friend
-    user_id = User.find(session[:user_id]) if session[:user_id]
-    frined_id = params[:add_friend].to_i
-    frends = Friend.new
-    frends.sql_add_friend frined_id, user_id.id   # Добавление друга
+    friend = User.find_by id: params[:add_friend].to_i
+    return unless friend
 
+    Friend.make_fiends(current_user, friend)
     redirect_to '/view_friends'
   end
 end

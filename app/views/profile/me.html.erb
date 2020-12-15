@@ -2,9 +2,7 @@
   <%= render 'layouts/r_menu' %>
   <div class="column right">
     <div class="container_right">
-    <% if @id_user == nil  %>
-      <% if current_user %>
-          <div class="list-type4">
+    <div class="list-type4">
             <ol>
               <li><a href="#">Анкета:</a></li>
               <li><a href="#">Имя: <%= current_user.name %></a></li>
@@ -13,20 +11,6 @@
               <li><a href="#">Почта: <%= current_user.email  %></a></li>
             </ol>
           </div>
-      <%end %>
-       <%else %>
-          <% if @frineduser != nil %>
-          <div class="list-type4">
-            <ol>
-              <li><a href="#">Анкета:</a></li>
-              <li><a href="#">Имя: <%= @frineduser.name %></a></li>
-              <li><a href="#">Фамилия: <%= @frineduser.surname %></a></li>
-              <li><a href="#">Никнейм: <%= @frineduser.nick %></a></li>
-              <li><a href="#">Почта: <%= @frineduser.email  %></a></li>
-            </ol>
-          </div>
-          <%end %>
-    <%end %>
     </div>
   </div>
 </div>

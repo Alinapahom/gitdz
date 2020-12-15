@@ -1,8 +1,13 @@
 # frozen_string_literal: true
 
 class Friend < ApplicationRecord
-  def sql_add_friend(id_friend_, id_user_)
-    # Добавляем в базу друзей.
-    Friend.create([{ id_friend: id_friend_, id_user: id_user_ }, { id_friend: id_user_, id_user: id_friend_ }])
+  belongs_to :user, foreign_key: :id_user
+  belongs_to :firend, class_name: :User, foreign_key: :id_friend
+
+  class << self
+    def make_fiends(first_user, second_user)
+      create([{ id_friend: first_user.id, id_user: second_user.id },
+              { id_friend: second_user.id, id_user: first_user.id }])
+    end
   end
 end

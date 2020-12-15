@@ -1,8 +1,11 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
-  # защита запроса от подделки(Вызывает исключение ActionController::InvalidAuthenticityToken).
+  # Защита запроса от подделки (Вызывает исключение ActionController::InvalidAuthenticityToken).
   protect_from_forgery with: :exception
+
+  before_action :authorize
+
   helper_method :current_user
 
   def current_user
@@ -10,7 +13,7 @@ class ApplicationController < ActionController::Base
   end
 
   def authorize
-    # Если пользователь не зарегистрирован, то отправлять на стhаницу регистрации&
-    redirect_to '/login' unless current_user
+    # Если пользователь не зарегистрирован, то отправлять на страницу регистрации.
+    redirect_to login_url unless current_user
   end
 end
