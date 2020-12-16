@@ -2,12 +2,7 @@
 
 class NewsController < ApplicationController
   def posts
-    user_ids = [*Friend.select(:id_friend).where(id_user: current_user.id), current_user]
-    @res_posts = News
-                 .joins(:user)
-                 .where(user: user_ids)
-                 .order(:created_at)
-                 .map { |news| [[news.user.full_name], [news.post], [news.created_at], [news.user.id]] }
+    @res_posts = News.feed_for(current_user)
   end
 
   def post_add

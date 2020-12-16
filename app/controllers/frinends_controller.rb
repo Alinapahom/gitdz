@@ -4,7 +4,7 @@ class FrinendsController < ApplicationController
   skip_before_action :verify_authenticity_token # отключаем защиту от подделки запросов на контроллере
 
   def view
-    @res = current_user.friends
+    @res = Friend.joins(:friend).where(id_user: current_user.id)
   end
 
   def add
