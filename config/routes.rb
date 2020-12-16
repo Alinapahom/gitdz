@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   get  '/posts' => 'news#posts'
   get  '/get_posts' => 'news#post_get'
-  post  '/post_add' => 'news#post_add'
+  post '/post_add' => 'news#post_add'
   get  '/view_friends' => 'frinends#view'
   post 'add' => 'frinends#add'
   get 'add' => 'frinends#add'

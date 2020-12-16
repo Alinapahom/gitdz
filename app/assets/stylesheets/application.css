@@ -13,79 +13,89 @@
  *= require_tree .
  *= require_self
  */
- body { /* туловище */
-    margin: 0 auto;
-    font-family: 'Montserrat', sans-serif;
-    background-color: #fadfe8;
-    font-size: 20px;
-    line-height: 1.6;
-    height: 100%;
+body {
+  /* туловище */
+  margin: 0 auto;
+  font-family: "Montserrat", sans-serif;
+  background-color: #fadfe8;
+  font-size: 20px;
+  line-height: 1.6;
+  height: 100%;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    margin: 0;
-} 
-.header { /* баннер */
-    background-color: #d3778e;
-    width: 100%;
-    padding-top: 30px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+.header {
+  /* баннер */
+  background-color: #d3778e;
+  width: 100%;
+  padding-top: 30px;
+  /* position: absolute; */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
 }
 .header.fixed {
-    padding: 10px 0;
+  padding: 10px 0;
 
-    background-color: #d3778e;;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  background-color: #d3778e;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 
-    transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
 }
 
-.header__inner { /* убирает лишнюю часть баннера */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.header__inner {
+  /* убирает лишнюю часть баннера */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.header__logo { /* название соц сети */
-    font-size: 30px;
-    font-weight: 700;
-    color: #ffffff;
-    margin-left: 10px;
+.header__logo {
+  /* название соц сети */
+  font-size: 30px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-left: 10px;
 }
-
 
 /* Nav */
-.nav { /* Выйти? Привет! размер */
-    font-size: 14px;
-    text-transform: uppercase;
+.nav {
+  /* Выйти? Привет! размер */
+  font-size: 14px;
+  text-transform: uppercase;
 }
 
-.nav__link {/* Привет! Выйти цвет расстояние друг от друга */
+.nav__link {
+  /* Привет! Выйти цвет расстояние друг от друга */
 
-    vertical-align: top;
-    margin: 0 15px;
-    position: relative;
-    color: #fff;
-    text-decoration: none;
+  vertical-align: top;
+  margin: 0 15px;
+  position: relative;
+  color: #fff;
+  text-decoration: none;
 }
 
-.nav__link:first-child{ /* */
-    display: inline-block;
-    vertical-align: top;
-    margin: 0 15px;
-    position: relative;
-    color: #fff;
-    text-decoration: none;
-
+.nav__link:first-child {
+  /* */
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 15px;
+  position: relative;
+  color: #fff;
+  text-decoration: none;
 }
 
 /* .nav__link.active {
@@ -99,32 +109,34 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 auto;
 } */
 
-.page { /* расстояние от нижней части сайта до формы (поднимает форму на середину) */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    position: relative;
-    padding-bottom: 100px;
-
+.page {
+  /* расстояние от нижней части сайта до формы (поднимает форму на середину) */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+  padding-bottom: 100px;
 }
 
-.sidebar { /* меню */
-    margin: 0;
-    padding: 0;
-    width: 170px;
-    background-color: #d3778e;
-    position: fixed;
-    height: 190px;
-    position: absolute;
+.sidebar {
+  /* меню */
+  margin: 0;
+  padding: 0;
+  width: 170px;
+  background-color: #d3778e;
+  position: fixed;
+  height: 190px;
+  position: absolute;
 }
 
 /* Sidebar links */
-.sidebar a {/* текст меню */
-    display: block;
-    color: #ffffff;
-    padding: 16px;
-    text-decoration: none;
+.sidebar a {
+  /* текст меню */
+  display: block;
+  color: #ffffff;
+  padding: 16px;
+  text-decoration: none;
 }
 
 /* Active/current link */
@@ -133,7 +145,7 @@ h1, h2, h3, h4, h5, h6 {
     color: white;
 } */
 
-
-.sidebar a:hover:not(.active) {/* наведение на кнопку меню */
-    background-color: #803d4e;
+.sidebar a:hover:not(.active) {
+  /* наведение на кнопку меню */
+  background-color: #803d4e;
 }
