@@ -6,9 +6,9 @@
       <tr>
         <th>Мои друзья</th>
       </tr>
-      <% @res.each do |result| %>
+      <% @res.each do |friendship| %>
         <tr>
-          <td><%= link_to result[0].join, "/?id_user=#{result[1].join}" %></td>
+          <td><%= link_to friendship.friend.full_name, "/?id_user=#{friendship.id_friend}" %></td>
         </tr>
       <% end %>
     </table>
